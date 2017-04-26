@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kie-container container-id="hr">
+   <release-id>
+      <group-id>com.sample</group-id>
+      <artifact-id>cjd-pov</artifact-id>
+      <version>1.0.0-SNAPSHOT</version>
+   </release-id>
+</kie-container>

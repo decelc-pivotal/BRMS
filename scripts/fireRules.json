@@ -1,0 +1,5 @@
+{
+  "commands" : [ 
+    { "fire-all-rules" : { } }
+  ]
+}

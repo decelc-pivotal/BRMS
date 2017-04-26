@@ -1,0 +1,10 @@
+---
+applications:
+- name: cjdkieserver
+  memory: 1G
+  timeout: 60
+  path: kie-server-6.5.0.Final-webc.war
+  buildpack: https://github.com/decelc-pivotal/java-buildpack
+  env: 
+     MVN_SERVER_KEY: 057b1c2cb024af43923c4900d40bcefa6ab5bd55
+     CATALINA_OPTS: "-XX:MaxDirectMemorySize=1G -Dorg.kie.deployment.desc.location=file:/home/vcap/app/.java-buildpack/tomcat/conf/deployment-descriptor.xml -Dbtm.root=/home/vcap/app/.java-buildpack/tomcat -Dbitronix.tm.configuration=/home/vcap/app/.java-buildpack/tomcat/conf/btm-config.properties -Djbpm.tsr.jndi.lookup=java:comp/env/TransactionSynchronizationRegistry -Dorg.jboss.logging.provider=jdk -Djava.security.auth.login.config=/home/vcap/app/.java-buildpack/tomcat/webapps/ROOT/WEB-INF/classes/login.config  -Dorg.jbpm.server.ext.disabled=false -Dorg.drools.server.ext.disabled=false -Dorg.jbpm.cdi.bm=java:comp/env/BeanManager -Dorg.kie.server.persistence.ds=java:comp/env/jdbc/jbpm -Dorg.kie.server.persistence.tm=org.hibernate.service.jta.platform.internal.BitronixJtaPlatform -Dorg.kie.server.id=cjdkieserver -Dkie.maven.settings.custom=/home/vcap/app/.java-buildpack/tomcat/conf/settings.xml"

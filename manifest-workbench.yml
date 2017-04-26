@@ -1,0 +1,11 @@
+---
+applications:
+- name: cjddroolswb
+  memory: 2048M
+  timeout: 180
+  services:
+  - postgresql
+  path: kie-drools-wb-6.5.0.Final-tomcat7.war
+  buildpack: https://github.com/decelc-pivotal/java-buildpack
+  env:
+     CATALINA_OPTS: "-XX:MaxDirectMemorySize=1G  -Dbtm.root=/home/vcap/app/.java-buildpack/tomcat -Dbitronix.tm.configuration=/home/vcap/app/.java-buildpack/tomcat/conf/btm-config.properties -Djbpm.tsr.jndi.lookup=java:comp/env/TransactionSynchronizationRegistry -Dorg.jboss.logging.provider=jdk -Djava.security.auth.login.config=/home/vcap/app/.java-buildpack/tomcat/webapps/ROOT/WEB-INF/classes/login.config -Dorg.jbpm.server.ext.disabled=true -Dorg.drools.server.ext.disabled=true -Dorg.jbpm.cdi.bm=java:comp/env/BeanManager -Dorg.kie.server.persistence.ds=java:jboss/datasources/PostgresqlDS -Dorg.kie.server.persistence.tm=org.hibernate.service.jta.platform.internal.BitronixJtaPlatform -Dorg.kie.server.persistence.dialect=org.hibernate.dialect.PostgreSQLDialect -Dorg.kie.server.user=kieuser -Dorg.kie.server.pwd=password1 -Dorg.kie.server.location=http://cjdkieserver.cfapps.io/services/rest/server -Dkie.maven.settings.custom=/home/vcap/app/.java-buildpack/tomcat/conf/kie-settings.xml"
